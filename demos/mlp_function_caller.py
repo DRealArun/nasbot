@@ -6,7 +6,11 @@
 
 # pylint: disable=arguments-differ
 
-import cPickle as pic
+import sys
+if sys.version_info[0] < 3:
+    import cPickle as pic
+else:
+    import pickle as pic
 import os
 from time import sleep
 from copy import deepcopy

@@ -36,7 +36,7 @@ MAX_NUM_UNITS_PER_LAYER = 1024 # Maximum number of computational units ...
 MIN_NUM_UNITS_PER_LAYER = 8    # ... (neurons/conv-filters) per layer.
 
 # Which GPU IDs are available
-GPU_IDS = [0, 1]
+GPU_IDS = [0, 1] #*Change*
 
 # Where to store temporary model checkpoints (can get larger than capacity of /tmp on auton),
 TMP_DIR = '/tmp'
@@ -62,9 +62,9 @@ def main():
   # neural network architectures. We have defined the CNNFunctionCaller in
   # demos/cnn_function_caller.py. The train_params argument can be used to specify
   # additional training parameters such as the learning rate etc.
-  train_params = Namespace(data_dir='cifar-10-data')
+  train_params = Namespace(data_dir='cifar-10-data') #*Change*
   func_caller = CNNFunctionCaller('cifar10', nn_domain, train_params,
-                                  tmp_dir=TMP_DIR, reporter=REPORTER)
+                                  tmp_dir=TMP_DIR, reporter=REPORTER) #*Change*
 
   # Run nasbot
   opt_val, opt_nn, _ = nasbot.nasbot(func_caller, worker_manager, BUDGET,

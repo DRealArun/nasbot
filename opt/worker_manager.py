@@ -15,6 +15,7 @@ import shutil
 import time
 # Local
 from opt.function_caller import EVAL_ERROR_CODE
+from __future__ import print_function
 
 TIME_TOL = 1e-5
 
@@ -325,7 +326,7 @@ class RealWorkerManager(WorkerManager):
     if self.qinfos_in_progress[worker_id] is not None:
       err_msg = 'qinfos_in_progress: %s,\nfree_workers: %s.'%(
                    str(self.qinfos_in_progress), str(self.free_workers))
-      print err_msg
+      print(err_msg)
       raise ValueError('Check if worker is free before sending evaluation.')
     # First add all the data to qinfo
     qinfo.worker_id = worker_id

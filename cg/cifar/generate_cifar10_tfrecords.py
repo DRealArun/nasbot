@@ -24,7 +24,11 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
-import cPickle
+import sys
+if sys.version_info[0] < 3:
+    import cPickle
+else:
+    import pickle as cPickle
 import os
 
 import tarfile

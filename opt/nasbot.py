@@ -21,6 +21,7 @@ from opt.gp_bandit import GPBandit, gp_bandit_args
 from utils.general_utils import block_augment_array
 from utils.reporters import get_reporter
 from utils.option_handler import get_option_specs, load_options
+from __future__ import print_function
 
 nasbot_specific_args = [
   get_option_specs('nasbot_acq_opt_method', False, 'ga',
@@ -142,7 +143,7 @@ class NASBOT(GPBandit):
       self.list_of_dists = self._compute_list_of_dists(reg_X, reg_X)
       self.already_evaluated_dists_for = reg_X
     if (len(reg_X), len(reg_Y)) != self.list_of_dists[0].shape:
-      print (len(reg_X)), len(reg_Y), self.list_of_dists[0].shape, self.step_idx
+      print((len(reg_X)), len(reg_Y), self.list_of_dists[0].shape, self.step_idx)
     assert (len(reg_X), len(reg_Y)) == self.list_of_dists[0].shape
     self.gp.set_list_of_dists(self.list_of_dists)
     self.gp.set_data(reg_X, reg_Y, build_posterior=True)
