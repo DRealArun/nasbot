@@ -6,6 +6,7 @@
 # pylint: disable=invalid-name
 # pylint: disable=no-member
 
+from __future__ import print_function
 from argparse import Namespace
 from multiprocessing import Process
 import numpy as np
@@ -15,7 +16,6 @@ import shutil
 import time
 # Local
 from opt.function_caller import EVAL_ERROR_CODE
-from __future__ import print_function
 
 TIME_TOL = 1e-5
 

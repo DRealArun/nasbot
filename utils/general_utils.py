@@ -8,9 +8,9 @@
 # pylint: disable=no-name-in-module
 # pylint: disable=invalid-name
 
+from __future__ import print_function
 import numpy as np
 from scipy.sparse import dok_matrix
-from __future__ import print_function
 
 def map_to_cube(pts, bounds):
   """ Maps bounds to [0,1]^d and returns the representation in the cube. """

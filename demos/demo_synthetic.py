@@ -3,6 +3,7 @@
   -- kandasamy@cs.cmu.edu
 """
 
+from __future__ import print_function
 import numpy as np
 # Local
 from nn.nn_constraint_checkers import get_nn_domain_from_constraints
@@ -11,7 +12,6 @@ from nn.nn_visualise import visualise_nn
 from opt import nasbot
 from opt.function_caller import FunctionCaller
 from opt.worker_manager import SyntheticWorkerManager
-from __future__ import print_function
 
 
 # Search space
