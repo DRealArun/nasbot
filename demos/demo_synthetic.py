@@ -11,6 +11,7 @@ from nn.nn_visualise import visualise_nn
 from opt import nasbot
 from opt.function_caller import FunctionCaller
 from opt.worker_manager import SyntheticWorkerManager
+from __future__ import print_function
 
 
 # Search space
@@ -46,8 +47,8 @@ def main():
   opt_val, opt_nn, _ = nasbot.nasbot(func_caller, worker_manager, budget)
 
   # Print the optimal value and visualise the best network.
-  print '\nOptimum value found: ', opt_val
-  print 'Optimal network visualised in syn_opt_network.eps.'
+  print('\nOptimum value found: ', opt_val)
+  print('Optimal network visualised in syn_opt_network.eps.')
   visualise_nn(opt_nn, 'syn_opt_network')
 
   # N.B: See function nasbot and class NASBOT in opt/nasbot.py to customise additional
