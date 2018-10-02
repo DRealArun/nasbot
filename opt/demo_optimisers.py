@@ -6,6 +6,7 @@
 #pylint: disable=relative-import
 
 # Local imports
+from __future__ import print_function
 from opt import ga_optimiser
 from nn.syn_nn_functions import cnn_syn_func1, mlp_syn_func1
 from opt.domains import NNDomain
@@ -16,7 +17,6 @@ from nn_opt_utils import get_initial_cnn_pool, get_initial_mlp_pool
 from utils.reporters import get_reporter
 from utils.option_handler import load_options
 from opt.worker_manager import SyntheticWorkerManager
-from __future__ import print_function
 
 
 # The problem
