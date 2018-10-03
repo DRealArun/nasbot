@@ -15,7 +15,7 @@ import sys
 if sys.version_info[0] < 3:
   from sets import Set
 else:
-  pass
+  Set = set
 import shutil
 import time
 # Local

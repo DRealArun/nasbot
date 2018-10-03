@@ -7,6 +7,7 @@
 # pylint: disable=invalid-name
 # pylint: disable=abstract-class-little-used
 
+import six
 from copy import deepcopy
 from argparse import Namespace
 # Local
@@ -83,7 +84,7 @@ class GAOptimiserTestCase(BaseTestClass):
   def setUp(self):
     """ Set up. """
     ret = get_nn_opt_arguments()
-    for key, val in ret.__dict__.iteritems():
+    for key, val in six.iteritems(ret.__dict__):
       setattr(self, key, val)
 
   def test_instantiation(self):

@@ -8,6 +8,7 @@
 from copy import deepcopy
 import numpy as np
 import os
+import six
 from shutil import rmtree
 # Local imports
 from nn import nn_constraint_checkers
@@ -103,7 +104,7 @@ class NNModifierTestCase(BaseTestClass):
       report_str = '%d (%s n=%d,m=%d):: '%(idx, nn.nn_class, nn.num_layers,
                                            nn.get_total_num_edges())
       total_num_primitives = 0
-      for _, list_or_prims in primitives.iteritems():
+      for _, list_or_prims in six.iteritems(primitives):
         report_str += '%d, '%(len(list_or_prims))
         total_num_primitives += len(list_or_prims)
       report_str += 'tot=%d'%(total_num_primitives)
