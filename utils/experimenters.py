@@ -9,6 +9,7 @@
 
 from argparse import Namespace
 import random
+import six
 from time import time
 import numpy as np
 import pickle
@@ -57,7 +58,7 @@ class BasicExperimenter(object):
     try:
       if self.save_file_extension == 'mat':
         dict_to_be_saved = vars(self.to_be_saved)
-        dict_to_be_mat_saved = {key:val for key, val in dict_to_be_saved.iteritems()
+        dict_to_be_mat_saved = {key:val for key, val in six.iteritems(dict_to_be_saved)
                                 if key not in self.data_not_to_be_mat_saved}
         sio_savemat(self.save_file_full_name, mdict=dict_to_be_mat_saved)
       else:
@@ -75,7 +76,7 @@ class BasicExperimenter(object):
     """ Dumps to everything. """
     save_in = open(self.pickle_file_name, 'wb')
     dict_to_be_saved = vars(self.to_be_saved)
-    dict_to_be_pickled = {key:val for key, val in dict_to_be_saved.iteritems()
+    dict_to_be_pickled = {key:val for key, val in six.iteritems(dict_to_be_saved)
                           if key not in self.data_not_to_be_pickled}
     pickle.dump(dict_to_be_pickled, save_in)
     save_in.close()

@@ -13,7 +13,7 @@ from utils.base_test_class import BaseTestClass, execute_tests
 from nn import nn_comparators
 from nn.unittest_neural_network import generate_cnn_architectures, \
                                        generate_mlp_architectures
-
+import six
 _TOL = 1e-5
 
 
@@ -160,7 +160,7 @@ class TransportNNDistanceComputerTestCase(BaseTestClass):
           dists[dt] = tp_comp(nn_i, nn_j, dist_type=dt)
         res_str = ' '.join(['%s=%s'%(self._get_dist_type_abbr(key),
                                      get_list_of_floats_as_str(val))
-                            for key, val in dists.iteritems()])
+                            for key, val in six.iteritems(dists)])
         self.report('(i,j)=(%d,%d) %s'%(i, j, res_str), 'test_result')
 
   def _test_dist_comp_for_multiple_coeffs(self, nns, dist_types, mislabel_coeffs,
@@ -179,7 +179,7 @@ class TransportNNDistanceComputerTestCase(BaseTestClass):
           assert len(dists[dt]) == num_dists
         res_str = ' '.join(['%s=%s'%(self._get_dist_type_abbr(key),
                                      get_list_of_floats_as_str(val))
-                            for key, val in dists.iteritems()])
+                            for key, val in six.iteritems(dists)])
         self.report('(i,j)=(%d,%d) %s'%(i, j, res_str), 'test_result')
 
   def test_cnn_distance_computation(self):

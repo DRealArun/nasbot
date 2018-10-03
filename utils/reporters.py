@@ -5,6 +5,10 @@
 """
 
 import sys
+if sys.version_info[0] < 3:
+  pass
+else:
+  from io import IOBase as file
 
 def get_reporter(reporter):
   """ Returns a reporter based on what was passed as argument. If reporter is already

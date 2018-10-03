@@ -4,6 +4,7 @@
 """
 # pylint: disable=star-args
 
+import six
 import argparse
 from copy import deepcopy
 
@@ -22,7 +23,7 @@ def _print_options(ondp, desc, reporter):
   title_str = 'Hyper-parameters for %s '%(desc)
   title_str = title_str + '-'*(80 - len(title_str))
   reporter.writeln(title_str)
-  for key, value in sorted(ondp.iteritems()):
+  for key, value in sorted(six.iteritems(ondp)):
     is_changed_str = '*' if value[0] != value[1] else ' '
     reporter.writeln('  %s %s %s'%(key.ljust(30), is_changed_str, str(value[1])))
 
