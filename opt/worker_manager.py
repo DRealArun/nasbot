@@ -11,7 +11,11 @@ from argparse import Namespace
 from multiprocessing import Process
 import numpy as np
 import os
-from sets import Set
+import sys
+if sys.version_info[0] < 3:
+  from sets import Set
+else:
+  pass
 import shutil
 import time
 # Local

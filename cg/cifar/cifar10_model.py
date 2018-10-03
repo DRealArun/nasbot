@@ -26,7 +26,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-import model_base
+from cg.cifar import model_base
 
 
 def get_layer_parents(adjList,lidx):
